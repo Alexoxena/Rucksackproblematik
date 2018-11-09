@@ -1,9 +1,9 @@
 
 public class Rucksackproblematik {
 
-	static int rVol= 30;
-	static int [] gVol = {5,5,6,9,6,11,12,15,17,30};
-	static int [] gWert = {7,7,6,5,10,5,14,17,20,21};
+	static int rVol= 30; //gesamtvolumen
+	static int [] gVol = {5,5,6,9,6,11,12,15,17,30}; //Volumen der einzelnen Gegenstände
+	static int [] gWert = {7,7,6,5,10,5,14,17,20,21}; //Wert der einzelnen Gegenstände
 	
 	static int packen (int restVol, int i){
 		if (i<gVol.length){
@@ -15,6 +15,7 @@ public class Rucksackproblematik {
 			int drin= 0;
 			if (restVol-gVol[i]>=0){
 				drin=gWert[i]+packen(restVol-gVol[i], i+1);
+				System.out.println("Restvolumen: "+restVol);
 				System.out.println("Drin-Wert: "+drin);
 			}
 			if (nicht>drin){
